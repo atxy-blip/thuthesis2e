@@ -1246,13 +1246,16 @@
 %
 % \subsection{基本信息}
 %    \begin{macrocode}
-%<cls>\NeedsTeXFormat{LaTeX2e}[2017/04/15]
-%<cls>\ProvidesClass{thuthesis}
-%<cls>[2022/10/05 7.3.1 Tsinghua University Thesis Template]
+%<*cls>
+\NeedsTeXFormat{LaTeX2e}[2017/04/15]
+\ProvidesClass{thuthesis}
+[2022/10/05 7.3.1 Tsinghua University Thesis Template]
+%</cls>
 %    \end{macrocode}
 %
 % 报错
 %    \begin{macrocode}
+%<*(cls|dtx-style)>
 \newcommand\thu@error[1]{%
   \ClassError{thuthesis}{#1}{}%
 }
@@ -1271,6 +1274,7 @@
     \fi
   }%
 }
+%</(cls|dtx-style)>
 %    \end{macrocode}
 %
 % 检查 \LaTeXe{} kernel 版本
