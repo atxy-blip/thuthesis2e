@@ -17,6 +17,11 @@ thuthesis-example.pdf
 build/
 testfiles/**/*.pdf
 
+## llm
+.claude
+.codex
+.llmdoc-tmp/
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
