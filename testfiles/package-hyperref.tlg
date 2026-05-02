@@ -3165,6 +3165,7 @@ Completed box being shipped out [1]
 ........\special{pdf:dest (equation.0.1) [@thispage /XYZ @xpos @ypos null]}
 ........\penalty 10000
 .......\mathoff
+......\kern 0.0
 ......\hbox(0.0+0.0)x0.0
 ......\TU/XITSMath-Regular(1)/m/n/12.045 glyph#2507
 ......\kern1.4454
@@ -4588,8 +4589,8 @@ Completed box being shipped out [4]
 ...\vbox(674.33032+0.0)x426.79135, glue set 7.58475fil
 ....\write-{}
 ....\write1{\pp@pagectr{footnote}{2}{\theabspage }{\thepage }}
-....\special{pdf:dest (appendix.A) [@thispage /XYZ @xpos @ypos null]}
-....\write4{\protect \BOOKMARK [0][]{appendix.A}{\376\377\000A\000p\000p\000e\000\ETC.}
+....\special{pdf:dest (chapter.A) [@thispage /XYZ @xpos @ypos null]}
+....\write4{\protect \BOOKMARK [0][]{chapter.A}{\376\377\000A\000p\000p\000e\000n\ETC.}
 ....\write1{\@writefile{toc}{\protect \contentsline {chapter}{\protect \numberline \ETC.}
 ....\marks1{\__mark_value:nn {22}{Appendix A Title}}
 ....\marks2{\__mark_value:nn {23}{}}
@@ -4830,6 +4831,7 @@ Completed box being shipped out [4]
 ........\special{pdf:dest (equation.A.1) [@thispage /XYZ @xpos @ypos null]}
 ........\penalty 10000
 .......\mathoff
+......\kern 0.0
 ......\hbox(0.0+0.0)x0.0
 ......\TU/XITSMath-Regular(1)/m/n/12.045 glyph#2507
 ......\kern1.4454
