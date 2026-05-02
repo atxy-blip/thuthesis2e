@@ -22,6 +22,17 @@ Treat passing tests as necessary but not sufficient:
 - cover-page, frontmatter, and bibliography changes may need focused visual or
   PDF-level checks in addition to l3build.
 
+Use targeted verification during agent work:
+
+- after each code change, run only the l3build target or configuration relevant
+  to the touched behavior;
+- do not run the complete `l3build check` suite by default, because it is
+  intentionally thorough and expensive;
+- let the human maintainer run the complete suite unless they explicitly ask the
+  agent to run it;
+- when the human reports full-suite failures, treat those as follow-up targets
+  and debug the reported cases directly.
+
 Port tests forward:
 
 - once a behavior area is implemented in `../thuthesis3`, copy or adapt the

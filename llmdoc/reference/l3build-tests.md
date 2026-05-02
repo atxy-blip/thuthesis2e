@@ -22,7 +22,20 @@ Support files:
 
 ## Useful Commands
 
-Run all configured tests:
+Run a focused target after a narrow change:
+
+```sh
+l3build check <target>
+```
+
+Run a focused configuration for a covered area:
+
+```sh
+l3build check --config testfiles/config-title-page
+```
+
+Run all configured tests only when explicitly requested or when preparing a
+final integration point:
 
 ```sh
 l3build check
@@ -57,3 +70,7 @@ make save target=<target>
 
 Check whether an excluded case matters before relying on default test success
 for a refactor.
+
+Current workflow preference: agents should run relevant focused checks after
+changes, while the human maintainer runs the complete suite and reports any
+remaining failures such as package compatibility regressions.

@@ -1318,6 +1318,7 @@
 \hyphenation{Thu-Thesis}
 \def\thuthesis{ThuThesis}
 \def\version{7.6.0}
+\RequirePackage{expl3}
 \RequirePackage{kvdefinekeys}
 \RequirePackage{kvsetkeys}
 \RequirePackage{kvoptions}
@@ -1330,12 +1331,14 @@
 % \begin{macro}{\thusetup}
 % 提供一个 \cs{thusetup} 命令支持 \emph{key-value} 的方式来设置。
 %    \begin{macrocode}
+\ExplSyntaxOn
 \let\thu@setup@hook\@empty
-\newcommand\thusetup[1]{%
-  \let\thu@setup@hook\@empty
-  \kvsetkeys{thu}{#1}%
-  \thu@setup@hook
-}
+\NewDocumentCommand \thusetup { m }
+  {
+    \let \thu@setup@hook \@empty
+    \keys_set:nn { thu } {#1}
+    \thu@setup@hook
+  }
 %    \end{macrocode}
 % \end{macro}
 %
@@ -1444,10 +1447,16 @@
 % 定义 \cs{thusetup} 接口。
 %
 %    \begin{macrocode}
-  \kv@define@key{thu}{#1}{%
+  \expandafter\def\csname thu@#1@@set\endcsname##1{%
     \@namedef{thu@\@nameuse{thu@#1@@name}}{##1}%
     \@nameuse{thu@#1@@check}%
     \@nameuse{thu@#1@@code}%
+  }%
+  \kv@define@key{thu}{#1}{%
+    \@nameuse{thu@#1@@set}{##1}%
+  }%
+  \keys_define:nn { thu } {
+    #1 .code:n = { \use:c { thu@#1@@set } {##1} }
   }%
 }
 %    \end{macrocode}
@@ -1458,6 +1467,7 @@
 \newcommand\thu@option@hook[2]{%
   \expandafter\g@addto@macro\csname thu@#1@@code\endcsname{#2}%
 }
+\ExplSyntaxOff
 %    \end{macrocode}
 %
 %    \begin{macrocode}

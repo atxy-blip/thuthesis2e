@@ -1,0 +1,18 @@
+\input{regression-test.tex}
+\documentclass{thuthesis}
+
+\begin{document}
+\START
+\makeatletter
+
+\thusetup{
+  title  = {Title With Old Syntax},
+  author = {Author With Old Syntax},
+}
+
+\typeout{THUSETUP-TITLE: \thu@title}
+\typeout{THUSETUP-AUTHOR: \thu@author}
+
+\makeatother
+\OMIT
+\end{document}

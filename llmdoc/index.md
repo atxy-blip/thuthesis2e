@@ -38,6 +38,8 @@ branch is explicitly marked as a migration experiment.
 - `reference/l3build-tests.md`: l3build test layout and useful commands.
 - `reference/git-commit-conventions.md`: observed commit message style and
   recommended commit text for this fork.
+- `reference/l3keys-compatibility.md`: compatibility rules for l3keys
+  migration experiments.
 
 ## Memory
 
